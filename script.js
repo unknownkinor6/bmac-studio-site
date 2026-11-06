@@ -480,15 +480,15 @@
         v.message || '(no further detail)'
       ].join('\n');
 
-      window.location.href = 'mailto:bruno@bmacstudio.co.uk'
+      window.location.href = 'mailto:contact@bmacstudio.co.uk'
         + '?subject=' + encodeURIComponent('Website enquiry — ' + v.type + ', ' + v.where)
         + '&body='    + encodeURIComponent(body);
 
       if (done) {
         done.innerHTML = '<h3>Nearly there.</h3><p>Your email app should have opened with '
           + 'the details already filled in — press send and it is with us. If nothing '
-          + 'happened, email <a href="mailto:bruno@bmacstudio.co.uk">bruno@bmacstudio.co.uk</a> '
-          + 'or call <a href="tel:+447492879494">07492 879494</a>.</p>';
+          + 'happened, email <a href="mailto:contact@bmacstudio.co.uk">contact@bmacstudio.co.uk</a> '
+          + 'or call <a href="tel:+447428411614">07428 411614</a>.</p>';
       }
       sent();
     }
