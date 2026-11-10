@@ -822,6 +822,9 @@ body.boot-done .boot{ opacity:0; visibility:hidden; pointer-events:none; }
   text-transform:uppercase; letter-spacing:.03em;
 }
 .form__done p{ color:var(--ink-2); font-size:.95rem; }
+/* shown only with JavaScript off, in place of the form (see the no-JS block) */
+.form__nojs{ display:none; color:var(--ink-2); font-size:.95rem; line-height:1.6; }
+.form__nojs a{ color:inherit; }
 
 /* ======================= 7e · QUIET CREDENTIALS ==========================
    Four facts on one line: registration, years, rating, reach. No headline and
@@ -1316,6 +1319,10 @@ html:not(.js) .boot{ display:none; }
 html:not(.js) body.is-booting{ overflow:auto; }
 html:not(.js) .nav{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
 html:not(.js) .film{ height:auto; }
+/* the form has no action (a mailto: action makes Chrome and Edge call the page "not fully
+   secure", and GitHub Pages refuses a POST), so without JavaScript it cannot send */
+html:not(.js) .form__inner{ display:none; }
+html:not(.js) .form__nojs{ display:block; }
 html:not(.js) .film__pin{ position:static; height:auto; }
 html:not(.js) .film__stage{
   position:relative; inset:auto; height:min(74svh,620px);

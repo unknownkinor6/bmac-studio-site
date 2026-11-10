@@ -412,9 +412,10 @@
      The site is static, so there is no backend to post to. Set FORM_ENDPOINT
      to the URL of a form service such as Formspree or Basin and the form
      posts to it silently. (Netlify Forms cannot work here: it only runs on
-     sites Netlify hosts, and this one is on GitHub Pages.) When it is set, give the
-     form in index.html the same URL as its action, in place of the mailto:,
-     so a visitor without JavaScript posts there too.
+     sites Netlify hosts, and this one is on GitHub Pages.)
+     The form in index.html has no action on purpose: action="mailto:..." made
+     Chrome and Edge mark the homepage "not fully secure". Without JavaScript
+     the form is hidden and .form__nojs offers the email and phone instead.
      Left empty, it falls back to composing the email in the visitor's own
      mail client, which works everywhere but depends on one being set up.
      ====================================================================== */
